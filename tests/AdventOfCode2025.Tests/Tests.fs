@@ -151,7 +151,7 @@ let ``day03 part1 works for data`` () =
 [<Fact>]
 let ``day03 part2 works for data`` () =
     // Arrange
-    let expected: string = "17435" // specific to my challange
+    let expected: string = "172886048065379" // specific to my challange
     let testFile: string = pathFromTestDir ["data"; "input_03.txt"]
     // Act
     let result: string = day03.run (
