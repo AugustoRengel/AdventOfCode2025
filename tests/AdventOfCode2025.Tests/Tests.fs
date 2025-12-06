@@ -119,3 +119,45 @@ let ``day02 sequenceDontRepeats`` (input: string) =
     match result with
     | Error msg -> Assert.Equal(expected, msg)    
     | Ok _ -> Assert.Fail "Expecting error"
+
+[<Fact>]
+let ``day03 part1 works for test data`` () =
+    // Arrange
+    let expected: string = "357" // specific to my challange
+    let testFile: string = pathFromTestDir ["data"; "test_input_03.txt"]
+    // Act
+    let result: string = day03.run (
+        testFile,
+        2,
+        false
+    )
+    //Assert
+    Assert.Equal(expected, result)
+
+[<Fact>]
+let ``day03 part1 works for data`` () =
+    // Arrange
+    let expected: string = "17435" // specific to my challange
+    let testFile: string = pathFromTestDir ["data"; "input_03.txt"]
+    // Act
+    let result: string = day03.run (
+        testFile,
+        2,
+        false
+    )
+    //Assert
+    Assert.Equal(expected, result)
+
+[<Fact>]
+let ``day03 part2 works for data`` () =
+    // Arrange
+    let expected: string = "17435" // specific to my challange
+    let testFile: string = pathFromTestDir ["data"; "input_03.txt"]
+    // Act
+    let result: string = day03.run (
+        testFile,
+        12,
+        false
+    )
+    //Assert
+    Assert.Equal(expected, result)

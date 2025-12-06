@@ -3,11 +3,10 @@ open Utils
 
 module Dispatcher =
     let run(number: int): string =
-        let dataDir = PathHelper.pathFromRoot(["data"])
         match number with
         | 1 
             -> day01.run (
-                PathHelper.getDataFile "example_input_01.txt", 
+                PathHelper.getDataFile "input_01.txt", 
                 true,
                 PasswordMethod.PassingBy
             )
@@ -16,6 +15,14 @@ module Dispatcher =
                 PathHelper.getDataFile "input_02.txt", 
                 true,
                 RepetitionMethod.NTimes
+            )
+        | 3 
+            ->  printfn "Quantos digitos de Joltagem?"
+                let digits: int = System.Console.ReadLine() |> int
+                day03.run (
+                PathHelper.getDataFile "input_03.txt", 
+                digits,
+                true
             )
         | _ -> "Modulo não encontrado"
 
