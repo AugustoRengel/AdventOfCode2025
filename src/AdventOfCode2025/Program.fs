@@ -11,12 +11,18 @@ module Dispatcher =
                 true,
                 PasswordMethod.PassingBy
             )
+        | 2 
+            -> day02.run (
+                PathHelper.getDataFile "input_02.txt", 
+                true,
+                RepetitionMethod.NTimes
+            )
         | _ -> "Modulo não encontrado"
 
 [<EntryPoint>]
 let main _ =
-    printf "Qual projeto quer executar? (1 - 12)"
+    printfn "Qual projeto quer executar? (1 - 12)"
     let number: int = System.Console.ReadLine() |> int
     let result: string = Dispatcher.run number
-    printf "%s" result
+    printfn "%s" result
     0

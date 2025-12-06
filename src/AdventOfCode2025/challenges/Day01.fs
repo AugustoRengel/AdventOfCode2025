@@ -61,6 +61,19 @@ module Dial =
             |PasswordMethod.PassingBy -> timesPassedByZero
             |PasswordMethod.Default -> if getPosition dial = 0 then 1 else 0
 
+    let parseDialMove(dialMove: string): Movement =
+        let sense: Sense = 
+            match dialMove.[0] with
+                | 'L' -> Left
+                | 'R' | _ -> Right
+        let steps: int =
+            dialMove.Substring(1)
+            |> int
+        {
+            Sense=sense 
+            Steps=steps
+        }
+
     let moveRight (dial: Dial, steps: int) =
         let result, timesPassedByZero = 
             let newPosition = dial.Position + steps
@@ -105,29 +118,19 @@ module Dial =
         
 
 module day01 =
-    let parseDialMove(dialMove: string): Movement =
-        let sense: Sense = 
-            match dialMove.[0] with
-                | 'L' -> Left
-                | 'R' | _ -> Right
-        let steps: int =
-            dialMove.Substring(1)
-            |> int
-        {
-            Sense=sense 
-            Steps=steps
-        }
-
     let run (filePath: string, verbose: bool, method: PasswordMethod) : string =
         let rows = System.IO.File.ReadAllLines(filePath)
 
         let movements= 
             rows
-            |> Array.map parseDialMove
+            |> Array.map Dial.parseDialMove
+
         let dial = Dial.create(50, 0,100, method, verbose)
+        
         let movedDial =
             movements
             |> Array.fold (fun d movement ->
                 Dial.move (d, movement)
                 ) dial
+
         string (Dial.getTimesInZero movedDial)
