@@ -161,3 +161,33 @@ let ``day03 part2 works for data`` () =
     )
     //Assert
     Assert.Equal(expected, result)
+
+[<Theory>]
+[<InlineData("input_04.txt", "1489")>]
+[<InlineData("test_input_04.txt", "13")>]
+let ``day04 part1 works for data`` (fileName: string, expected: string) =
+    // Arrange
+    let testFile: string = pathFromTestDir ["data"; fileName]
+    // Act
+    let result: string = day04.run (
+        testFile,
+        false,
+        false
+    )
+    //Assert
+    Assert.Equal(expected, result)
+
+[<Theory>]
+[<InlineData("input_04.txt", "8890")>]
+[<InlineData("test_input_04.txt", "43")>]
+let ``day04 part2 works for data`` (fileName: string, expected: string) =
+    // Arrange
+    let testFile: string = pathFromTestDir ["data"; fileName]
+    // Act
+    let result: string = day04.run (
+        testFile,
+        false, 
+        true
+    )
+    //Assert
+    Assert.Equal(expected, result)

@@ -24,6 +24,12 @@ module Dispatcher =
                 digits,
                 true
             )
+        | 4 
+            ->  day04.run (
+                    PathHelper.getDataFile "input_04.txt",
+                    true,
+                    true
+                )
         | _ -> "Modulo não encontrado"
 
 [<EntryPoint>]
