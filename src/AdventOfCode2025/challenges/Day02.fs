@@ -50,7 +50,7 @@ module ProductId =
                             seq {}
                         else
                             decompose(s.Length, 2)
-                    | N -> 
+                    | NTimes -> 
                         decompose (s.Length, s.Length)
                         |> Seq.append (seq { s.Length })
 
