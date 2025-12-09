@@ -191,3 +191,63 @@ let ``day04 part2 works for data`` (fileName: string, expected: string) =
     )
     //Assert
     Assert.Equal(expected, result)
+
+[<Theory>]
+[<InlineData("input_05.txt", "563")>]
+[<InlineData("test_input_05.txt", "3")>]
+let ``day05 part1 works for data`` (fileName: string, expected: string) =
+    // Arrange
+    let testFile: string = pathFromTestDir ["data"; fileName]
+    // Act
+    let result: string = day05.run (
+        testFile,
+        false,
+        false
+    )
+    //Assert
+    Assert.Equal(expected, result)
+
+[<Theory>]
+[<InlineData("input_05.txt", "338693411431456")>]
+[<InlineData("test_input_05.txt", "14")>]
+let ``day05 part2 works for data`` (fileName: string, expected: string) =
+    // Arrange
+    let testFile: string = pathFromTestDir ["data"; fileName]
+    // Act
+    let result: string = day05.run (
+        testFile,
+        false,
+        true
+    )
+    //Assert
+    Assert.Equal(expected, result)
+
+[<Theory>]
+[<InlineData("input_06.txt", "5227286044585")>]
+[<InlineData("test_input_06.txt", "4277556")>]
+let ``day06 part1 works for data`` (fileName: string, expected: string) =
+    // Arrange
+    let testFile: string = pathFromTestDir ["data"; fileName]
+    // Act
+    let result: string = day06.run (
+        testFile,
+        false,
+        ReadMethod.Human
+    )
+    //Assert
+    Assert.Equal(expected, result)
+
+[<Theory>]
+[<InlineData("input_06.txt", "10227753257799")>]
+[<InlineData("test_input_06.txt", "3263827")>]
+let ``day06 part2 works for data`` (fileName: string, expected: string) =
+    // Arrange
+    let testFile: string = pathFromTestDir ["data"; fileName]
+    // Act
+    let result: string = day06.run (
+        testFile,
+        false,
+        ReadMethod.Cephalopod
+    )
+    //Assert
+    Assert.Equal(expected, result)

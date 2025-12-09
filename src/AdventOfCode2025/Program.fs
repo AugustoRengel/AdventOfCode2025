@@ -6,24 +6,24 @@ module Dispatcher =
         match number with
         | 1 
             -> day01.run (
-                PathHelper.getDataFile "input_01.txt", 
-                true,
-                PasswordMethod.PassingBy
-            )
+                    PathHelper.getDataFile "input_01.txt", 
+                    true,
+                    PasswordMethod.PassingBy
+                )
         | 2 
             -> day02.run (
                 PathHelper.getDataFile "input_02.txt", 
-                true,
-                RepetitionMethod.NTimes
-            )
+                    true,
+                    RepetitionMethod.NTimes
+                )
         | 3 
             ->  printfn "Quantos digitos de Joltagem?"
                 let digits: int = System.Console.ReadLine() |> int
                 day03.run (
-                PathHelper.getDataFile "input_03.txt", 
-                digits,
-                true
-            )
+                    PathHelper.getDataFile "input_03.txt", 
+                    digits,
+                    true
+                )
         | 4 
             ->  day04.run (
                     PathHelper.getDataFile "input_04.txt",
@@ -33,7 +33,14 @@ module Dispatcher =
         | 5 
             ->  day05.run (
                     PathHelper.getDataFile "input_05.txt",
+                    true,
                     true
+                )
+        | 6 
+            ->  day06.run (
+                    PathHelper.getDataFile "input_06.txt",
+                    true,
+                    ReadMethod.Cephalopod
                 )
         | _ -> "Modulo não encontrado"
 

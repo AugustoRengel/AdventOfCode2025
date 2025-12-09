@@ -38,7 +38,7 @@ module day05 =
                     endR2
             Some (newStart, newEnd)
 
-    let run(filePath: string, verbose: bool) =
+    let run(filePath: string, verbose: bool, onlyFreshIds: bool) =
         let rows = System.IO.File.ReadAllLines(filePath)
 
         let ranges, ids = 
@@ -72,7 +72,6 @@ module day05 =
             freshIds
             |> Array.fold (fun acc (startRange, endRange) ->
                 acc + endRange - startRange + 1L) 0L
-        printfn "%i Fresh Ids" totalFreshIds
 
         let totalFreshItems =
             ids
@@ -82,4 +81,7 @@ module day05 =
                 else
                     acc
                 ) 0
-        sprintf "%i" totalFreshItems
+        if onlyFreshIds then
+            sprintf "%i" totalFreshIds
+        else
+            sprintf "%i" totalFreshItems
