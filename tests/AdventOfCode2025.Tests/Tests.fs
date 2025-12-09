@@ -251,3 +251,17 @@ let ``day06 part2 works for data`` (fileName: string, expected: string) =
     )
     //Assert
     Assert.Equal(expected, result)
+
+[<Theory>]
+[<InlineData("input_07.txt", "3806264447357")>]
+[<InlineData("test_input_07.txt", "40")>]
+let ``day07 part2 works for data`` (fileName: string, expected: string) =
+    // Arrange
+    let testFile: string = pathFromTestDir ["data"; fileName]
+    // Act
+    let result: string = day07.run (
+        testFile,
+        false
+    )
+    //Assert
+    Assert.Equal(sprintf "timelines: %s" expected, result)

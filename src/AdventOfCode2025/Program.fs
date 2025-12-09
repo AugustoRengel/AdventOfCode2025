@@ -42,6 +42,11 @@ module Dispatcher =
                     true,
                     ReadMethod.Cephalopod
                 )
+        | 7 
+            ->  day07.run (
+                    PathHelper.getDataFile "input_07.txt",
+                    true
+                )
         | _ -> "Modulo não encontrado"
 
 [<EntryPoint>]
