@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net9.0;net10.0</TargetFrameworks>
+    <TargetFramework>net10.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +15,7 @@
     <Compile Include="challenges/Day06.fs" />
     <Compile Include="challenges/Day07.fs" />
     <Compile Include="challenges/Day08.fs" />
+    <Compile Include="challenges/Day09.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
