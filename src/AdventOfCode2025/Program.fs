@@ -58,6 +58,11 @@ module Dispatcher =
                     PathHelper.getDataFile "input_09.txt",
                     true
                 )
+        | 10
+            ->  day10.run (
+                    PathHelper.getDataFile "test_input_10.txt",
+                    true
+                )
         | _ -> "Modulo não encontrado"
 
 [<EntryPoint>]

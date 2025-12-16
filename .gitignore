@@ -54,5 +54,7 @@ TestResult.xml
 nunit-*.xml
 .fake
 
+# vscode
+.vscode
 # data
 **/input**.txt

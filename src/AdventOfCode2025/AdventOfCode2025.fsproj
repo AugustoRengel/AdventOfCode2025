@@ -16,6 +16,7 @@
     <Compile Include="challenges/Day07.fs" />
     <Compile Include="challenges/Day08.fs" />
     <Compile Include="challenges/Day09.fs" />
+    <Compile Include="challenges/Day10.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
