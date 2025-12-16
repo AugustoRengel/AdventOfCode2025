@@ -58,3 +58,4 @@ nunit-*.xml
 .vscode
 # data
 **/input**.txt
+**/test_input**.txt
