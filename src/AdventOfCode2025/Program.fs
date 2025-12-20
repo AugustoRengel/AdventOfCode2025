@@ -16,7 +16,7 @@ module Dispatcher =
         | 7 -> day07.run (PathHelper.getDataFile "input_07.txt", true)
         | 8 -> day08.run (PathHelper.getDataFile "input_08.txt", true, 1000)
         | 9 -> day09.run (PathHelper.getDataFile "input_09.txt", true)
-        | 10 -> day10.run (PathHelper.getDataFile "input_10.txt", true)
+        | 10 -> day10.run (PathHelper.getDataFile "test_input_10.txt", true)
         | _ -> "Modulo não encontrado"
 
 [<EntryPoint>]
